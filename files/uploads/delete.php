@@ -4,7 +4,7 @@ if ( isset( $_GET['id'] ) ) {
     // var_dump( $_GET['id'] );
     $fileDir = $_GET['id'];
     unlink( $fileDir );
-    echo "fichier supprimé";
+    // echo "fichier supprimé";
     $error = 'info';
     $message = "Fichier supprimé avec succès";
     $_SESSION['error'] = $error;
