@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 function listing($repertoire)
 {
@@ -85,10 +86,6 @@ function listing($repertoire)
 
 ?>
 
-
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html>
 
@@ -116,6 +113,21 @@ session_start();
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mx-auto">
+                    <div class="my-3">
+                        <?php
+    
+                        if (isset($_SESSION['message'])) {
+                        ?>
+                            <div class="alert alert-<?= $_SESSION['error'] ?>">
+                                <?php
+                                echo  $_SESSION['message'];
+                                unset($_SESSION['message']);
+                                ?>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
                     <div>
                         <a href="../index.php" class="btn btn-success mt-5 mb-4"><i class="fas fa-plus"></i> Ajouter un fichier </a>
                     </div>
