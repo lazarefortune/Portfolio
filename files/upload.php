@@ -1,6 +1,7 @@
 <?php
 session_start(); 
 
+$error = 'danger'; 
 $message = ''; 
 if (isset($_POST['uploadBtn']))
 {
@@ -18,28 +19,34 @@ if (isset($_POST['uploadBtn']))
     $fileExtension = strtolower(end($fileNameCmps));
  
     // sanitize file-name
-    $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
- 
+    // $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+      $newFileName = $fileName ;
     // check if file has one of the following extensions
-    $allowedfileExtensions = array('pdf', 'jpg', 'gif', 'png', 'zip', 'txt', 'xls', 'doc' );
+    $allowedfileExtensions = array( 'pdf', 'jpg', 'gif', 'png', 'zip', 'txt', 'xls', 'doc' );
  
     if (in_array($fileExtension, $allowedfileExtensions))
     {
       // directory in which the uploaded file will be moved
       $uploadFileDir = './uploads/';
       $dest_path = $uploadFileDir . $newFileName;
- 
-      if(move_uploaded_file($fileTmpPath, $dest_path)) 
-      {
-        $message ='File is successfully uploaded.';
-      }
-      else
-      {
-        $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
+      if (file_exists( $dest_path )) {
+        $error = 'danger';
+        $message ='Ce fichier existe déjà. Veuillez renommer votre fichier';
+      } else {
+        if(move_uploaded_file($fileTmpPath, $dest_path)) 
+        {
+          $error = 'success';
+          $message ='File is successfully uploaded.';
+        }
+        else
+        {
+          $message = 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
+        }
       }
     }
     else
     {
+      $error = 'danger';
       $message = 'Upload failed. Allowed file types: ' . implode(',', $allowedfileExtensions);
     }
   }
@@ -50,6 +57,7 @@ if (isset($_POST['uploadBtn']))
   }
 }
 
+$_SESSION['error'] = $error;
 $_SESSION['message'] = $message;
 header("Location: index.php");
 ?>
