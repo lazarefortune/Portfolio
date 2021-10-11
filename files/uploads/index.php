@@ -47,7 +47,10 @@ function listing($repertoire)
     foreach ($fichier as $value) {
         $link = rawurlencode($repertoire) . '/' . rawurlencode(str_replace('/', '', $value));
         $message = '<li class="list-group-item">
-        <h5>'. $value .' </h5>
+        <h5 class="mb-3">
+        
+        <a class="link " target="_blank" href="' . $link . '"> '. $value .' </a>
+        </h5>
         <div class="">
             <a class="btn btn-sm btn-primary" download href="' . $link . '"> <i class="fas fa-download"></i> Télécharger </a> 
 
