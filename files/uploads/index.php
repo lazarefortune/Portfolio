@@ -44,7 +44,7 @@ function listing($repertoire)
     if ( empty($fichier) ) {
         echo '<div class="alert alert-info mt-5"> Aucun fichier disponible </div>';
     }
-    foreach ($fichier as $value) {
+    foreach ($fichier as $key => $value) {
         $link = rawurlencode($repertoire) . '/' . rawurlencode(str_replace('/', '', $value));
         $message = '<li class="list-group-item">
         <h5 class="mb-3">
@@ -55,12 +55,12 @@ function listing($repertoire)
             <a class="btn btn-sm btn-primary" download href="' . $link . '"> <i class="fas fa-download"></i> Télécharger </a> 
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal'.$key.'">
             <i class="fas fa-trash"></i> Supprimer
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="exampleModal'.$key.'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
