@@ -3,17 +3,16 @@ session_start();
 
 function listing($repertoire)
 {
-
     $fichier = array();
 
     if (is_dir($repertoire)) {
 
-        $dir = opendir($repertoire);                              //ouvre le repertoire courant désigné par la variable
-        while (false !== ($file = readdir($dir))) {                             //on lit tout et on récupere tout les fichiers dans $file
+        $dir = opendir($repertoire);          //ouvre le repertoire courant désigné par la variable
+        while (false !== ($file = readdir($dir))) {     //on lit tout et on récupere tout les fichiers dans $file
 
-            if (!in_array($file, array('.', '..'))) {            //on eleve le parent et le courant '. et ..'
+            if (!in_array($file, array('.', '..'))) {  //on eleve le parent et le courant '. et ..'
 
-                $page = $file;                            //sort l'extension du fichier
+                $page = $file;                  //sort l'extension du fichier
                 $page = explode('.', $page);
                 $nb = count($page);
                 $nom_fichier = $page[0];

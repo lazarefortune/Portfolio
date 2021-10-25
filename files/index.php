@@ -36,21 +36,23 @@ session_start();
                     <div class="my-3">
                         <?php
 
-                        if (isset($_SESSION['message'])) {
-                        ?>
-                            <div class="alert alert-<?= $_SESSION['error'] ?>">
-                                <?php
-                                echo  $_SESSION['message'];
-                                unset($_SESSION['message']);
-                                ?>
-                            </div>
-                        <?php
+                        if (isset($_SESSION['messages'])) {
+                            foreach ($_SESSION['messages'] as $key => $message) {
+                            ?>
+                                <div class="alert alert-<?= $message['class'] ?>">
+                                    <?php
+                                    echo  $message['contenu'];
+                                    unset($_SESSION['messages'][$key]);
+                                    ?>
+                                </div>
+                            <?php
+                            }
                         }
                         ?>
                     </div>
                     <div class="mb-3">
                         <label for="formFile" class="form-label h4">Téléverser un fichier</label>
-                        <input class="form-control" type="file" id="formFile" name="uploadedFile" multiple>
+                        <input class="form-control" type="file" id="formFile" name="uploadedFile[]" multiple>
                     </div>
                     <div>
                         <button class="btn btn-primary" name="uploadBtn" type="submit"> <i class="fas fa-paper-plane"></i> Envoyer à Fortune</button>
