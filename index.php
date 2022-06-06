@@ -60,7 +60,7 @@ https://templatemo.com/tm-531-reflux
                             <li><a href="#section1">A propos</a></li>
                             <li><a href="#section2">Mes compétences</a></li>
                             <li><a href="#section3">Mes travaux</a></li>
-                            <li><a href="#section6">Me contacter</a></li>
+                            <li><a href="#section4">Me contacter</a></li>
                         </ul>
                     </nav>
                     <!-- <div class="social-network">
@@ -164,7 +164,7 @@ https://templatemo.com/tm-531-reflux
                 <i class="devicon-bash-plain"></i>
                 <i class="devicon-ocaml-plain-wordmark"></i>
                 
-                <h3 class="text-center mt-4 text-primary">Technologies</h3>
+                <h3 class="text-center mt-4 text-primary">Framework et CMS</h3>
                 
                 <div class="icons-languages">
                   <i class="devicon-laravel-plain-wordmark"></i>
@@ -177,10 +177,6 @@ https://templatemo.com/tm-531-reflux
                   <i class="devicon-bootstrap-plain-wordmark"></i>
                   <i class="devicon-wordpress-plain-wordmark"></i>
                   <i class="devicon-django-plain"></i>
-                  <i class="devicon-nodejs-plain"></i>
-                  <i class="devicon-react-plain"></i>
-                  <i class="devicon-mysql-plain-wordmark"></i>
-
                 </div>
                 
                 <h3 class="text-warning mt-4">Environnement</h3>
@@ -201,11 +197,11 @@ https://templatemo.com/tm-531-reflux
                   <i class="devicon-trello-plain-wordmark"></i>
                   <!-- <i class="devicon-slack-plain-wordmark"></i> -->
                 </div>
+                
+                <h3 class="text-danger">Autres</h3>
 
+                <i class="devicon-mysql-plain-wordmark"></i>
 
-                <!-- <h3 class="text-center mt-4 text-primary">Certifications</h3>
-
-                <p>Je suis certifié CISCO CCNA </p> -->
 
               </div>
                 
@@ -402,7 +398,7 @@ https://templatemo.com/tm-531-reflux
                       ></a>
                       <h4>Julie Mvie</h4>
                       <span>Portfolio photographe</span>
-                      <a href="https://julie.my-space.fr/" target="_blank"><button class="btn btn-primary btn-sm">consulter</button></a>
+                      <a href="http://julie.web-creation.space" target="_blank"><button class="btn btn-primary btn-sm">consulter</button></a>
                     </figcaption>
                   </figure>
                 </div>
@@ -422,7 +418,7 @@ https://templatemo.com/tm-531-reflux
                       ></a>
                       <h4>Projet web</h4>
                       <span>Projet web, création d'un portoflio. (IUT de Metz)</span>
-                      <a href="https://portfolio.lazarefortune.com" target="_blank"><button class="btn btn-primary btn-sm">consulter</button></a>
+                      <a href="http://portfolio.lazarefortune.com" target="_blank"><button class="btn btn-primary btn-sm">consulter</button></a>
                     </figcaption>
                   </figure>
                 </div>
@@ -442,7 +438,7 @@ https://templatemo.com/tm-531-reflux
                       ></a>
                       <h4>Gestion des candiatures</h4>
                       <span>Un espace personnel ou j'enregistre mes candidatures aux offres de stages</span>
-                      <a href="https://projets.lazarefortune.com/candidatures" target="_blank"><button class="btn btn-primary btn-sm">consulter</button></a>
+                      <a href="http://projets.lazarefortune.com/candidatures" target="_blank"><button class="btn btn-primary btn-sm">consulter</button></a>
                     </figcaption>
                   </figure>
                 </div>
@@ -462,7 +458,7 @@ https://templatemo.com/tm-531-reflux
                       ></a>
                       <h4>Gestion des commandes</h4>
                       <span>Projet PHP, petite gestion des commandes d'un restaurant</span>
-                      <a href="https://projets.lazarefortune.com/smarty" target="_blank"><button class="btn btn-primary btn-sm">consulter</button></a>
+                      <a href="http://projets.lazarefortune.com/smarty" target="_blank"><button class="btn btn-primary btn-sm">consulter</button></a>
                     </figcaption>
                   </figure>
                 </div>
@@ -496,35 +492,14 @@ https://templatemo.com/tm-531-reflux
 
                 <div class="mt-4">
                   <a href="https://github.com/lazarefortune/AS_2021_Projet_Systeme" target="_blank"> <button class="btn btn-success btn-sm">Consulter sur GitHub</button> </a>
-                  <a href="assets/files/projets/AS_2021_Projet_Systeme-main.zip" download="projet_pacman_lazare_TOSSOU"> <button class="btn btn-primary btn-sm">Télécharger</button> </a>
+                <a href="assets/files/projets/AS_2021_Projet_Systeme-main.zip" download="projet_pacman_lazare_TOSSOU"> <button class="btn btn-primary btn-sm">Télécharger</button> </a>
                 </div>
               </div>
             </div>
         </div>
       </section>
 
-      <section class="section my-work" data-section="section5">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Ma chaîne YouTube</h2>
-            <div class="line-dec"></div>
-              <span>
-                J'aime partager ma passion et échanger. Je débute donc la création de contenus vidéos sur YouTube.
-              </span>
-            </div>
-            <div class="row">
-              
-              <div class="text-center">
-                <h4>Création d'une API REST en Node JS</h4> 
-                ​<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLDZiR055I-4zDBQX2aEgIp85gTg74mubN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-                
-              </div>
-            </div>
-        </div>
-      </section>
-
-      <section class="section contact-me" data-section="section6">
+      <section class="section contact-me" data-section="section5">
         <div class="container">
           <div class="section-heading">
             <h2>Me contacter</h2>
@@ -536,7 +511,7 @@ https://templatemo.com/tm-531-reflux
           <div class="row">
             <div class="right-content">
               <div class="container">
-                <form id="contact" action="mail.php" method="post">
+                <form id="contact" action="" method="post">
                   <div class="row">
                     <div class="col-md-6">
                       <fieldset>
@@ -594,7 +569,7 @@ https://templatemo.com/tm-531-reflux
                 </div>
                 <div class="col-md-12">
                     <fieldset>
-                        <button type="submit" id="form-submit" name="sendMail" class="button">
+                        <button type="submit" id="form-submit" class="button" disabled>
                           Envoyer le message
                         </button>
                         <br><span>(Temporairement indisponible)</span>
