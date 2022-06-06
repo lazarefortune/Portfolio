@@ -1,0 +1,19 @@
+{
+    "name": "lazarefortune/portfolio",
+    "description": "Portfolio de lazare fortune",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "admin/",
+            "App\\Controllers\\": "admin/controllers/",
+            "App\\Models\\": "admin/models/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lazare Fortune",
+            "email": "lazarefortune@gmail.com"
+        }
+    ],
+    "require": {}
+}
