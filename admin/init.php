@@ -1,5 +1,5 @@
 <?php
-
+require '../vendor/autoload.php';
 use App\Models\Database;
 
 $db = new Database();
