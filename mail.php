@@ -1,5 +1,13 @@
 <?php
-include_once 'Database.php';
+include_once 'admin/models/Database.php';
+
+use App\Models\Database;
+
+$databaseConfig = include_once 'config/database.php';
+$configs = include_once 'config/config.php';
+$env = $configs['environment'];
+
+$dbConfigs = $databaseConfig['environments'][$env];
 
 if( isset( $_POST['sendMail'] ) ){
     // Get data from form
@@ -11,11 +19,17 @@ if( isset( $_POST['sendMail'] ) ){
     $headers = 'From: '.$email."\r\n".
         'Reply-To: '.$email."\r\n" .
         'X-Mailer: PHP/' . phpversion();
-    // Connexion to database
-    //var_dump($name, $email, $subject, $message, $createdAt);
-    $db = new Database();
-    $dbHandle = $db->getDbHandle();
-    $dbFound = $db->getDbFound();
+
+    $host = $dbConfigs['host'];
+    $host = $dbConfigs['port'] ? $host .  ':' . $dbConfigs['port'] : '';
+    $user = $dbConfigs['user'];
+    $pass = $dbConfigs['pass'];
+    $dbname = $dbConfigs['name'];
+
+    // Connect to database and insert data
+    $dbHandle = mysqli_connect($host, $user, $pass, $dbname);
+
+    //die;
 
     // Insert data in database
     $sql = "INSERT INTO `mails` (`name`, `email`, `subject`, `message`, `createdAt`) VALUES ('$name', '$email', '$subject', '$message', '$createdAt')";
@@ -47,10 +61,12 @@ if( isset( $_POST['sendMail'] ) ){
     );
 
     if( $result ){
-        echo '<p>Votre message a bien été envoyé.</p>';
+        // SCript to redirect to the same page
+        echo '<script>alert("Votre message a bien été envoyé");</script>';
     }
     else{
-        echo '<p>Une erreur est survenue.</p>';
+        echo '<script>alert("Une erreur est survenue");</script>';
+        //echo '<p>Une erreur est survenue.</p>';
     }
 }
 
@@ -89,6 +105,7 @@ if( isset( $_POST['sendMail'] ) ){
                 <?php if( isset( $_POST['sendMail'] ) ){ ?>
                     <div class="alert alert-success" role="alert">
                         Votre message a bien été envoyé.
+                        <a href="index.php" class="alert-link">Retourons voir mon portfolio </a>
                     </div>
                 <?php } else if( isset( $_POST['sendMail'] ) && !$result ){ ?>
                     <div class="alert alert-danger" role="alert">

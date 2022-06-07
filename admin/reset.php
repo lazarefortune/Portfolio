@@ -57,6 +57,9 @@ if ( count( $errors ) == 0 ) {
             $sql = "DELETE FROM reset WHERE token = '$token'";
             mysqli_query($dbHandle, $sql);
 
+            $sql = "DELETE FROM reset WHERE userId = '$user[userId]'";
+            mysqli_query($dbHandle, $sql);
+
             header( "location: login.php" );
         }
     }
